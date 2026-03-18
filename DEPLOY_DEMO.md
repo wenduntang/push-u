@@ -7,7 +7,10 @@ pip install streamlit RestrictedPython
 streamlit run app.py
 ```
 
-浏览器打开 http://localhost:8501
+浏览器打开 http://localhost:8501，侧边栏可切换：
+- 🛡️ 沙箱运行环境
+- ⚡ 极简编排引擎
+- 🧠 符号神经融合AI
 
 ## 部署到 Hugging Face Spaces
 

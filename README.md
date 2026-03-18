@@ -67,7 +67,13 @@ pip install RestrictedPython  # code_executor 依赖
 streamlit run app.py
 ```
 
-浏览器打开 http://localhost:8501，可体验：北京天气、多城市对比、四则运算、组合任务，以及非法 import / 未定义变量等安全拦截演示。
+浏览器打开 http://localhost:8501，侧边栏切换三个 Demo：
+
+| Demo | 说明 |
+|------|------|
+| **🛡️ 沙箱运行环境** | 白名单、正逆向验证、命令隔离运行 |
+| **⚡ 极简编排引擎** | 代码即编排、天气/计算、安全拦截 |
+| **🧠 符号神经融合AI** | 神经(LLM)生成符号(代码)、执行反馈闭环 |
 
 部署到 [Hugging Face Spaces](https://huggingface.co/spaces) 详见 [DEPLOY_DEMO.md](DEPLOY_DEMO.md)。
 
