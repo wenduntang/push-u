@@ -1,0 +1,25 @@
+标题：[开源] 极简 Agent 编排引擎：代码即编排，约 50 行核心
+
+内容：
+
+做 LLM Agent 时不想写 JSON Schema、不想用 LangChain，于是写了个极简方案：
+
+**思路**：模型直接输出 Python 代码，引擎在沙箱里执行。逻辑在代码里，不在 Prompt 里。
+
+**实现**：
+- RestrictedPython 拦截 import/open
+- multiprocessing 超时强杀
+- 纯函数当工具，__doc__ 自动生成描述
+- 报错原样回传 LLM，自主 Debug
+
+**三个 Demo**：沙箱运行环境、极简编排、符号神经融合。Streamlit 一键跑。
+
+```bash
+pip install streamlit RestrictedPython
+git clone https://github.com/wenduntang/push-u.git && cd push-u
+streamlit run app.py
+```
+
+GitHub: https://github.com/wenduntang/push-u
+
+欢迎 Star / 提 Issue。

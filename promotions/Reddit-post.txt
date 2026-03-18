@@ -1,0 +1,13 @@
+[r/MachineLearning] Code-as-Orchestration Agent: LLM outputs Python, we execute it (~50 lines core)
+
+**TL;DR**: Skip JSON Tool Calling. Have the LLM output Python code and run it in a sandbox. Logic in code > logic in prompts.
+
+**Why**: LLMs are better at Python syntax than complex JSON schemas. Code supports if/else, loops, error handling natively.
+
+**Stack**: RestrictedPython (blocks import/open), multiprocessing (real timeout), pure functions as tools.
+
+**Demos**: Sandbox runtime, orchestration engine, symbolic-neural fusion (neural generates symbolic code, execution feeds back).
+
+Repo: https://github.com/wenduntang/push-u
+
+Feedback welcome!

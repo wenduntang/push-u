@@ -1,0 +1,12 @@
+Show HN: Code-as-Orchestration Agent – ~50 lines, no JSON, no DAG
+
+Instead of Tool Calling with JSON schemas, the LLM outputs Python code and we execute it in a sandbox. Logic lives in code, not in prompts.
+
+- RestrictedPython for safety (blocks import/open)
+- multiprocessing for real timeout (kills infinite loops)
+- Pure functions as tools, __doc__ auto-generates descriptions
+- Fail-fast: errors fed back to LLM for self-debug
+
+Three demos: sandbox runtime, orchestration engine, symbolic-neural fusion.
+
+https://github.com/wenduntang/push-u

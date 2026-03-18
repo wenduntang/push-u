@@ -1,0 +1,9 @@
+极简 Agent 编排：代码即编排，无 JSON 无 DAG
+
+模型输出 Python 代码 → 安全执行 → 报错回传 LLM 自纠
+
+约 50 行核心，三个 Demo：沙箱、编排、符号神经融合
+
+https://github.com/wenduntang/push-u
+
+#LLM #Agent #Python #OpenSource
