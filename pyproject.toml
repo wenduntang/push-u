@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "沙箱安全运行环境，用于隔离运行不可信 Web 服务/API"
 requires-python = ">=3.10"
 dependencies = [
+    "RestrictedPython>=6.0",
     "pydantic>=2.0",
     "click>=8.0",
     "fastapi>=0.100",
