@@ -61,6 +61,16 @@ pip install -e .
 pip install RestrictedPython  # code_executor 依赖
 ```
 
+## 在线 Demo
+
+```bash
+streamlit run app.py
+```
+
+浏览器打开 http://localhost:8501，可体验：北京天气、多城市对比、四则运算、组合任务，以及非法 import / 未定义变量等安全拦截演示。
+
+部署到 [Hugging Face Spaces](https://huggingface.co/spaces) 详见 [DEPLOY_DEMO.md](DEPLOY_DEMO.md)。
+
 ## 测试
 
 ```bash

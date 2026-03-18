@@ -20,7 +20,27 @@ def get_weather(city: str):
     """获取城市天气。用法: tools['get_weather']('北京')"""
     return f"{city}天气：晴"
 
-TOOLS = {"get_weather": get_weather}
+
+def calculator(expr: str):
+    """四则运算。用法: tools['calculator']('1+2*3')"""
+    import ast
+    import operator
+    op_map = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul, ast.Div: operator.truediv}
+    tree = ast.parse(expr.strip(), mode="eval")
+    if not isinstance(tree.body, (ast.BinOp, ast.Constant, ast.UnaryOp)):
+        raise ValueError("仅支持 + - * / 运算")
+    def eval_node(n):
+        if isinstance(n, ast.Constant):
+            return n.value
+        if isinstance(n, ast.UnaryOp) and isinstance(n.op, ast.USub):
+            return -eval_node(n.operand)
+        if isinstance(n, ast.BinOp) and type(n.op) in op_map:
+            return op_map[type(n.op)](eval_node(n.left), eval_node(n.right))
+        raise ValueError("仅支持四则运算")
+    return str(eval_node(tree.body))
+
+
+TOOLS = {"get_weather": get_weather, "calculator": calculator}
 
 
 def _worker(code: str, queue: multiprocessing.Queue) -> None:
