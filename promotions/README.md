@@ -22,13 +22,15 @@
 
 ## Hugging Face Spaces 部署
 
-1. 登录 https://huggingface.co
-2. 进入 https://huggingface.co/new-space
-3. Space 名称：`push-u-demo`
-4. SDK：Streamlit
-5. 选择 "Clone from a repo"，填入 `wenduntang/push-u`
-6. 或手动上传：app.py、code_executor.py、requirements.txt
-7. 创建后等待构建，获得公开 URL
+> HF 已弃用 Streamlit SDK，需选 **Docker**。
+
+1. 登录 https://huggingface.co → Spaces → Create new Space
+2. **Space name**：`push-u-demo`
+3. **Select the Space SDK**：选 **Docker**（不要选 Static/Gradio）
+4. **Choose a Docker template**：Blank 或 Python
+5. 创建后，Clone from repo 关联 `wenduntang/push-u`，或手动上传文件
+6. 将 `README_HF.md` 内容复制到 Space 的 `README.md`
+7. 等待构建（约 2–5 分钟）
 
 ## 发布顺序建议
 
